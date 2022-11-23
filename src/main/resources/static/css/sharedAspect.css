@@ -1,0 +1,215 @@
+body {
+    margin: 0px;
+    border: 3px solid darkgrey;
+}
+
+/* Header */
+
+header {
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid darkgrey;
+    position: relative;
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    background-color: rgb(220, 220, 220);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    width: 95%;
+    left: 2%;
+    right: 2%;
+    border: 3px solid darkgrey;
+    position: fixed;
+    z-index: 100;
+}
+
+nav a {
+    color: rgb(100, 100, 100);
+    font-size: calc(8px + 1vw);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: white;
+}
+
+#button_menu {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(200, 200, 200, 0.3);
+    z-index: 100;
+}
+
+#button_menu:hover {
+    cursor: pointer;
+    background-color:rgb(200, 200, 200, 0.5);
+}
+
+#button_menu div {
+    height: 3px;
+    width: 30px;
+    margin: 3px 0px;
+    background-color: white;
+}
+
+#id_1 {
+    margin: 40px 10px 0px 10px;
+}
+
+#id_1 strong {
+    font-size: calc(30px + 5vw);
+    font-family: 'Dela Gothic One', cursive;
+    color: red;
+}
+
+#id_2 {
+    margin-top: calc(160px + 5vw);
+    margin-left: 10px;
+    margin-bottom: 1%;
+}
+
+#id_2 strong {
+    font-size: calc(10px + 5vw);
+    border-radius: 10px;
+    background-color: rgba(149, 95, 32, 0.6);
+    color: white;
+}
+
+#id_1 strong, #id_2 strong {
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+/* Section */
+
+#modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal_menu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 40%;
+    height: 70%;
+    background-color: rgb(100, 100, 100, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#modal_menu a {
+    color: black;
+    font-size: calc(25px + 1vw);
+    text-decoration: none;
+    margin: 15px;
+}
+
+#modal_menu a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+#modal_menu a:active {
+    color: white;
+}
+
+/* Footer */
+
+footer {
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 250px;
+    border-top: 3px solid darkgrey;
+}
+
+footer div {
+    text-align: center;
+    padding: 20px 20px;
+    border: 2px solid darkgrey;
+    font-family: 'Economica', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+footer div em {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+/* Class */
+
+.no_scroll {
+	overflow: hidden;
+}
+
+.yscroll {
+    overflow-y: scroll;
+}
+
+.flex {
+    display: flex;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+/* Media Query */
+
+@media (max-width: 700px) {
+    /* Header */
+    #button_menu {
+        display: flex;
+    }
+    nav {
+        display: none;
+    }
+    #id_1 {
+        margin-top: 0px;
+    }
+    #id_1 strong {
+        font-size: 60px;
+    }
+    #id_2 strong {
+        font-size: 40px;
+    }
+}

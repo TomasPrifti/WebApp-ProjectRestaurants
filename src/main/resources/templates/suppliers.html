@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fornitori - Catena di Ristoranti</title>
+    <link rel="stylesheet" href="css/sharedAspect.css">
+    <link rel="stylesheet" href="css/sharedUser.css">
+    <link rel="stylesheet" href="css/suppliers.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/sharedMenu.js" defer></script>
+    <script src="js/suppliers.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="./home"><strong>HOME</strong></a>
+            <a href="./restaurants"><strong>RISTORANTI</strong></a>
+            <a href=""><strong>FORNITORI</strong></a>
+            <a href="./products"><strong>PRODOTTI</strong></a>
+        </nav>
+        <div id="button_menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div id="overlay">
+            <!-- Overlay -->
+        </div>
+        <div id="id_1">
+            <strong>Catena di<br>Ristoranti</strong>
+        </div>
+        <div id="id_2">
+            <strong>FORNITORI</strong>
+            <div id="login">
+                <span id="title_login">
+                    <span th:if="${user == null}">Sei un Fornitore ?</span>
+                    <span th:if="${user != null}">Benvenuto <span th:text="${username}"></span> !</span>
+                </span>
+                <div th:if="${user == null}">
+                    <input id="input_login" type="button" value="Accedi">
+                    <span>oppure</span>
+                    <input id="input_register" type="button" value="Registrati">
+                </div>
+                <div th:if="${user == 'supplier'}">
+                    <input id="profile" type="button" value="Profilo">
+                    <span>oppure</span>
+                    <input id="logout" type="button" value="Logout">
+                </div>
+                <div th:if="${user == 'restaurant'}">
+                    <input id="logout_res" type="button" value="Logout">
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <section>
+        <input type="hidden" id="value_user" th:value="${user}">
+        <h1 id="title_blocks">Tutti i Fornitori</h1>
+        <div id="input_block">Cerca:<input id="input_search" type="text"></div>
+
+        <!--
+        <div class="block">
+            <div class="info">
+                <h1 class="name">Nome</h1>
+                <span class="address">Indirizzo</span>
+            </div>
+            <div class="products">
+                <h1 class="products_title">Prodotti Disponibili</h1>
+
+                <div class="product">
+                    <h1 class="product_name">name</h1>
+                    <div class="product_info">
+                        <span>quantity</span>
+                        <span>cost</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     -->
+
+        <div id="modal" class="hidden">
+
+            <div id="modal_menu" class="hidden">
+                <a href="./home"><strong>HOME</strong></a>
+                <a href="./restaurants"><strong>RISTORANTI</strong></a>
+                <a href=""><strong>FORNITORI</strong></a>
+                <a href="./products"><strong>PRODOTTI</strong></a>
+            </div>
+
+            <div id="modal_block" class="hidden">
+
+                <strong id="modal_title">
+                    <!-- Title -->
+                </strong>
+
+                <div id="modal_content_login" class="hidden">
+                    <form id="form_login" method="post" action="/suppliers/login">
+                        <div id="block_login_username" class="fields">
+                            <label>Username:<input id="login_username" type="text"></label>
+                            <span class="error"></span>
+                        </div>
+                        <div id="block_login_password" class="fields">
+                            <label>Password:<input id="login_password" type="password"></label>
+                            <span class="error"></span>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="modal_content_register" class="hidden">
+                    <form id="form_register" method="post" action="/suppliers/register">
+                        <div id="block_register_username" class="fields">
+                            <em>(Sono ammesse lettere e numeri - Massimo 15 caratteri)</em>
+                            <label>Username:<input id="register_username" type="text"></label>
+                            <span class="error"></span>
+                        </div>
+                        <div id="block_register_email" class="fields">
+                            <em>(Esempio: nomefornitore@example.com)</em>
+                            <label>E-mail:<input id="register_email" type="text"></label>
+                            <span class="error"></span>
+                        </div>
+                        <div id="block_register_password" class="fields">
+                            <em>
+                                (Lunghezza minima 8 caratteri e massima 15 caratteri)<br>
+                                (Presenza di almeno un carattere maiuscolo e minuscolo)<br>
+                                (Presenza di almeno un numero)<br>
+                                (Presenza di almeno un simbolo)
+                            </em>
+                            <label>Password:<input id="register_password" type="password"></label>
+                            <span class="error"></span>
+                        </div>
+                        <div id="block_register_confirm_password" class="fields">
+                            <em>(Inserire nuovamente la password)</em>
+                            <label>Conferma password:<input id="register_confirm_password" type="password"></label>
+                            <span class="error"></span>
+                        </div>
+                        <div class="fields">
+                            <em>(Facoltativo) Nota: Se vuoto non verrà mostrato in elenco</em>
+                            <label>Nome del Fornitore:<input id="register_name" type="text"></label>
+                        </div>
+                        <div class="fields">
+                            <em>(Facoltativo)</em>
+                            <label>Indirizzo del Fornitore:<input id="register_address" type="text"></label>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="modal_content_profile" class="hidden">
+                    <form id="form_profile" method="post" action="/suppliers/update", class="fields">
+                        <label>Nome del Fornitore:<input id="profile_name" type="text" th:value="${name}"></label>
+                        <label>Indirizzo del Fornitore:<input id="profile_address" type="text" th:value="${address}"></label>
+                    </form>
+                </div>
+
+                <div id="buttons">
+                    <div id="modal_error" class="error hidden">Errore verifica i campi</div>
+                    <input id="modal_button" class="cursor" type="button">
+                    <div id="modal_button_delete" th:if="${user == 'supplier'}">
+                        <input id='delete_profile' class="cursor" type='button' value='Elimina profilo'>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div>
+            Seguici anche sui social !<br>
+            <em>Powered by<br>Prifti Tomas O46002191</em>
+        </div>
+    </footer>
+</body>
+
+</html>

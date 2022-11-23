@@ -1,0 +1,42 @@
+#id_2 {
+    margin: 0px 10px 10px 10px;
+    margin-top: calc(50px + 5vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#login {
+    background-color: rgba(149, 95, 32, 0.6);
+    width: 400px;
+    height: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+}
+
+#title_login {
+    background-color: rgb(247, 191, 88);
+    border-radius: 20px;
+    font-size: 30px;
+    width: 90%;
+    text-align: center;
+    padding: 5px;
+    z-index: 1;
+    font-family: 'Port Lligat Sans', sans-serif;
+}
+
+#login div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 10%;
+}
+
+#login div span {
+    font-size: 20px;
+    color: white;
+}

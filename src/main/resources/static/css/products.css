@@ -1,0 +1,498 @@
+header {
+    background-image: url(../images/products/header.jpg);
+}
+
+#transactions, #logout {
+    background-color: rgb(247, 191, 88);
+    border: 2px solid rgb(247, 191, 88);
+    border-radius: 10px;
+    font-size: 20px;
+    z-index: 1;
+}
+
+#transactions:hover, #logout:hover {
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+/* Section */
+
+section {
+    background-color: wheat;
+    display: flex;
+    padding: 2% 0%;
+    height: 700px;
+}
+
+.lateral_block {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px groove darkgrey;
+    background-color: rgb(247, 191, 88);
+}
+
+.lateral_image {
+    width: 90%;
+    height: 18%;
+    border: 3px groove darkgrey;
+    background-color: white;
+}
+
+#main_block {
+    width: 70%;
+}
+
+#title_blocks {
+    margin: 0% 3%;
+    font-size: calc(30px + 3vw);
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Arbutus', cursive;
+}
+
+#input_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2% 5%;
+}
+
+#input_text {
+    display: flex;
+    align-items: center;
+    font-size: calc(10px + 1vw);
+}
+
+#input_block_addProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0%;
+}
+
+#input_addProduct {
+    font-size: calc(10px + 1vw);
+    border-radius: 10px;
+    font-family: 'Dela Gothic One', cursive;
+    border: 3px solid black;
+}
+
+#input_addProduct:hover  {
+    cursor: pointer;
+    color: red;
+}
+
+#noUser {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    color: red;
+    font-size: calc(15px + 1vw);
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+}
+
+#noProducts, #noSuppliers {
+    font-size: calc(20px + 2vw);
+    color: red;
+    margin: 5% 5%;
+    text-align: center;
+}
+
+#products {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 65%;
+}
+
+.product {
+    width: 95%;
+    height: 50px;
+    border: 2px groove darkgrey;
+    margin: 1% 0%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(250, 220, 150);
+}
+
+.product_name {
+    margin: 0px;
+    margin-left: 2%;
+    width: 40%;
+    font-size: calc(20px + 1vw);
+    font-family: 'PT Serif', serif;
+}
+
+.product_info {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.product_info span {
+    font-size: calc(5px + 1vw);
+}
+
+.product_button_modify, .product_button_buy, .product_button_choose, .delete_transaction_product, .confirm_transaction, .delete_transaction, .accept_transaction, .decline_transaction {
+    margin: 2%;
+    font-size: calc(3px + 1vw);
+    border-radius: 10px;
+    border: 2px solid black;
+    font-family: 'Dela Gothic One', cursive;
+}
+
+.confirm_transaction, .delete_transaction, .accept_transaction, .decline_transaction {
+    font-size: calc(5px + 1vw);
+}
+
+.product_button_modify:hover, .delete_transaction_product:hover, .delete_transaction:hover, .decline_transaction:hover {
+    color: red;
+}
+
+.product_button_buy:hover, .product_button_choose:hover, .confirm_transaction:hover, .accept_transaction:hover {
+    color: rgb(0, 170, 0);
+}
+
+.modal_title {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+#modal_block_transactions {
+    width: 90%;
+    height: 75%;
+    background-color: rgb(255, 190, 71);
+    border: 2px groove darkgrey;
+    flex-direction: column;
+    align-items: center;
+}
+
+#block_transactions {
+    height: 400px;
+    background-color: rgb(247, 191, 88);
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.transaction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: 1%;
+    border: 1px solid black;
+}
+
+.transaction_info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    justify-content: space-around;
+    background-color: rgb(200, 135, 50);
+}
+
+.id_transaction {
+    width: 5%;
+    text-align: center;
+    font-size: calc(10px + 1vw);
+    font-family: 'Roboto Slab', serif;
+}
+
+.name {
+    margin: 0px;
+    width: 45%;
+    text-align: start;
+    font-size: calc(12px + 1vw);
+    font-family: 'Cherry Swash', cursive;
+}
+
+.date {
+    width: 20%;
+    text-align: start;
+    font-size: calc(8px + 1vw);
+    font-family: 'Cherry Swash', cursive;
+}
+
+.total_cost {
+    width: 25%;
+    text-align: center;
+    font-size: calc(8px + 1vw);
+    font-family: 'Roboto Slab', serif;
+}
+
+.transaction_products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(250, 220, 150, 0.5);
+}
+
+.transaction_products_title {
+    margin: 2%;
+    font-size: calc(15px + 1vw);
+    font-family: 'Playfair Display', serif;
+}
+
+.block_transaction_input_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+}
+
+.block_transaction_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block_transaction_input_text span {
+    font-size: calc(15px + 1vw);
+    font-style: italic;
+    font-family: 'Cherry Swash', cursive;
+}
+
+#modal_block_restaurants {
+    width: 70%;
+    height: 75%;
+    background-color: rgb(255, 190, 71);
+    border: 2px groove darkgrey;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal_title_product {
+    font-size: calc(15px + 1vw);
+    margin-bottom: 2%;
+}
+
+#suppliers {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    background-color: rgb(247, 191, 88);
+    width: 90%;
+    height: 300px;
+}
+
+.supplier {
+    width: 90%;
+    height: 60px;
+    border: 2px groove darkgrey;
+    margin: 1% 0%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(250, 220, 150);
+}
+
+.supplier_name {
+    margin: 0px;
+    margin-left: 2%;
+    width: 40%;
+    font-size: calc(15px + 1vw);
+}
+
+#block_buy_name_product, #block_buy_name_supplier, #block_buy_cost {
+    font-size: calc(15px + 1vw);
+    margin: 1% 0%;
+}
+
+#form_buy {
+    margin: 5% 0%;
+}
+
+#block_buy_quantity {
+    display: flex;
+    flex-direction: column;
+    font-size: calc(15px + 1vw);
+}
+
+#block_buy_total_cost {
+    font-size: calc(10px + 1vw);
+}
+
+#block_buy_total_cost span {
+    font-size: inherit;
+}
+
+#modal_block_suppliers {
+    width: 55%;
+    height: 70%;
+    background-color: rgb(255, 190, 71);
+    border: 2px groove darkgrey;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal_block_modify, #modal_block_add, #modal_block_choose, #modal_block_buy {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal_block_choose {
+    width: 100%;
+}
+
+#form_modify {
+    margin: 5% 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+#form_modify span, #form_buy span {
+    font-size: calc(7px + 1vw);
+}
+
+#block_modify_quantity, #block_modify_cost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: calc(15px + 1vw);
+    margin: 3% 0%;
+}
+
+#block_modify_quantity label, #block_modify_cost label, #block_buy_quantity label {
+    display: flex;
+    align-items: center;
+}
+
+#input_block_modify, #input_block_delete, #input_block_add, #input_block_buy {
+    border-radius: 10px;
+    margin: 2% 0%;
+    font-size: calc(10px + 1vw);
+    font-family: 'Dela Gothic One', cursive;
+}
+
+#input_block_delete {
+    color: red;
+}
+
+#form_add {
+    margin: 10% 0%;
+}
+
+#block_add_name, #block_add_quantity, #block_add_cost {
+    font-size: calc(15px + 1vw);
+    margin: 3% 0%;
+}
+
+#block_add_name label, #block_add_quantity label, #block_add_cost label {
+    display: flex;
+    align-items: center;
+}
+
+.error {
+    color: red;
+}
+
+.green {
+    color: rgb(0, 170, 0);
+}
+
+/* Media Query */
+
+@media (max-width: 1000px) {
+    section {
+        height: 550px;
+    }
+    .name {
+        font-size: calc(10px + 1vw);
+    }
+    .date {
+        font-size: calc(7px + 1vw);
+    }
+    .total_cost {
+        font-size: calc(7px + 1vw);
+    }
+
+}
+@media (max-width: 850px) {
+    #login {
+        width: 350px;
+        height: 200px;
+    }
+    #login div {
+        width: 85%;
+    }
+    section {
+        height: 450px;
+    }
+    #title_blocks {
+        font-size: calc(25px + 3vw);
+    }
+    .product_info span {
+        font-size: calc(7px + 1vw);
+    }
+    .date {
+        font-size: calc(6px + 1vw);
+    }
+    .total_cost {
+        font-size: calc(6px + 1vw);
+    }
+}
+@media (max-width: 700px) {
+    /* Header */
+    #login {
+        width: 300px;
+        height: 200px;
+    }
+    #title_login {
+        font-size: 25px;
+        width: 80%;
+    }
+    #login div {
+        width: 90%;
+    }
+    #transactions, #logout {
+        font-size: 15px;
+        width: 35%;
+    }
+    .date {
+        font-size: calc(5px + 1vw);
+    }
+    .total_cost {
+        font-size: calc(5px + 1vw);
+    }
+    /* Section */
+    #title_blocks {
+        margin-top: 2%;
+        font-size: 45px;
+    }
+    #input_block {
+        flex-direction: column;
+    }
+    #input_images {
+        margin-bottom: 2%;
+    }
+    #products {
+        height: 55%;
+    }
+}
+@media (max-width: 600px) {
+    section {
+        height: 550px;
+    }
+    .date {
+        font-size: calc(4px + 1vw);
+    }
+    .total_cost {
+        font-size: calc(4px + 1vw);
+    }
+}

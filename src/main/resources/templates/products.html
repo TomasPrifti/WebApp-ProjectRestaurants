@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prodotti - Catena di Ristoranti</title>
+    <link rel="stylesheet" href="css/sharedAspect.css">
+    <link rel="stylesheet" href="css/sharedUser.css">
+    <link rel="stylesheet" href="css/products.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/sharedMenu.js" defer></script>
+    <script src="js/products.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="./home"><strong>HOME</strong></a>
+            <a href="./restaurants"><strong>RISTORANTI</strong></a>
+            <a href="./suppliers"><strong>FORNITORI</strong></a>
+            <a href=""><strong>PRODOTTI</strong></a>
+        </nav>
+        <div id="button_menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div id="overlay">
+            <!-- Overlay -->
+        </div>
+        <div id="id_1">
+            <strong>Catena di<br>Ristoranti</strong>
+        </div>
+        <div id="id_2">
+            <strong>PRODOTTI</strong>
+            <span th:if="${user != null}">
+                <div id="login">
+                    <span id="title_login">Benvenuto <span th:text="${username}"></span> !</span>
+                    <div>    
+                        <input id="transactions" type="button" value="Transazioni">
+                        <span>oppure</span>
+                        <input id="logout" type="button" value="Logout">
+                    </div>
+                </div>
+            </span>
+        </div>
+
+    </header>
+
+    <section>
+        <input type="hidden" id="value_user" th:value="${user}">
+
+        <div class="lateral_block">
+            <!-- <img src=""> -->
+        </div>
+
+        <div id="main_block">
+
+            <h1 id="title_blocks">
+                Tutti i Prodotti
+            </h1>
+
+            <div id="input_block">
+                <input class="cursor" id="input_images" type="button" value="Nuove Immagini">
+                <div id="input_text">Cerca:<input id="input_content" type="text"></div>
+            </div>
+            <div id="input_block_addProduct" th:if="${user == 'supplier'}">
+                <input type="button" id="input_addProduct" value="NUOVO PRODOTTO">
+            </div>
+
+            <div id="products" class="yscroll">
+                <!--
+                    ---- For Restaurants ----
+                <div class="product">
+                    <h1 class="product_name">name</h1>
+                    <div class="product_info">
+                        <span>total quantity</span>
+                    </div>
+                    <input type="button" class="product_button_buy" value="Acquista">
+                </div>
+
+                    ---- For Suppliers ----
+                <div class="product">
+                    <h1 class="product_name">name</h1>
+                    <div class="product_info">
+                        <span>quantity</span>
+                        <span>cost</span>
+                    </div>
+                    <input type="button" class="product_button_modify" value="Modifica">
+                </div>
+                 -->
+            </div>
+
+        </div>
+
+        <div class="lateral_block">
+            <!-- <img src=""> -->
+        </div>
+
+        <div id="modal" class="hidden">
+
+            <div id="modal_menu" class="hidden">
+                <a href="./home"><strong>HOME</strong></a>
+                <a href="./restaurants"><strong>RISTORANTI</strong></a>
+                <a href="./suppliers"><strong>FORNITORI</strong></a>
+                <a href=""><strong>PRODOTTI</strong></a>
+            </div>
+
+            <span id="modal_block_transactions" class="hidden" th:if="${user != null}">
+                <h1 class="modal_title">Transazioni</h1>
+                <div id="block_transactions" class="yscroll">
+                    <!--
+                        <div class="transaction">
+                            <div class="transaction_info">
+                                <span class="id_transaction">Numero Transazione</span>
+                                <h1 class="name">Nome</h1>
+                                <span class="date">Data</span>
+                                <span class="total_cost"></span>
+                            </div>
+                            <div class="transaction_products">
+                                <h1 class="transaction_products_title">Riepilogo Ordine</h1>
+
+                                <div class="product">
+                                    <h1 class="product_name">name</h1>
+                                    <div class="product_info">
+                                        <span>quantity</span>
+                                        <span>cost</span>
+                                        <span>total_cost</span>
+                                    </div>
+                                    <input class="delete_transaction_product cursor" type="button" value="Elimina">
+                                </div>
+
+                                <div class="block_transaction_input_text">
+                                    <div class="block_transaction_input">
+
+                                        ---- For Restaurants ----
+                                        <input class="confirm_transaction cursor" type="button" value="Conferma Transazione">
+                                        <input class="delete_transaction cursor" type="button" value="Elimina Transazione">
+                                        
+                                        ---- For Suppliers ----
+                                        <input class="accept_transaction cursor" type="button" value="Accetta Transazione">
+                                        <input class="decline_transaction cursor" type="button" value="Rifiuta Transazione">
+                                    
+                                    </div>
+                                    <span></span>
+                                </div>
+
+                            </div>
+                        </div>
+                    -->
+                </div>
+            </span>
+
+            <!-- ---- For Restaurants ---- -->
+            <span id="modal_block_restaurants" class="hidden" th:if="${user == 'restaurant'}">
+                <div id="modal_block_choose" class="hidden">
+                    <h1 class="modal_title">Scegli un Fornitore</h1>
+                    <span id="modal_title_product"></span>
+                    <div id="suppliers" class="yscroll">
+                        <!-- 
+                        <div class="supplier">
+                            <h1 class="supplier_name">name</h1>
+                            <div class="product_info">
+                                <span>quantity</span>
+                                <span>cost</span>
+                            </div>
+                            <input type="button" class="product_button_choose" value="Scegli">
+                        </div> 
+                        -->
+                    </div>
+                </div>
+
+                <div id="modal_block_buy" class="hidden">
+                    <h1 class="modal_title">Acquista un Prodotto</h1>
+                    <span id="block_buy_name_product"></span>
+                    <span id="block_buy_name_supplier"></span>
+                    <span id="block_buy_cost"></span>
+                    <form id="form_buy" method="post" action="/products/buyProduct">
+                        <div id="block_buy_quantity">
+                            <span></span>
+                            <label>Quantità:<input id="input_block_buy_quantity" type="number"></label>
+                        </div>
+                        <div id="block_buy_total_cost">
+                            Prezzo Totale: <span></span> €
+                        </div>
+                    </form>
+                    <input id="input_block_buy" class="cursor" type="button" value="Aggiungi Prodotto">
+                    <span class="error"></span>
+                </div>
+            </span>
+
+            <!-- ---- For Suppliers ---- -->
+            <span id="modal_block_suppliers" class="hidden" th:if="${user == 'supplier'}">
+                <div id="modal_block_modify" class="hidden">
+                    <h1 class="modal_title">Modifica un Prodotto</h1>
+                    <form id="form_modify" method="post" action="/products/supplierModifyProduct">
+                        <span></span>
+                        <div id="block_modify_quantity">
+                            <span></span>
+                            <label>Quantità:<input id="input_block_modify_quantity" type="number"></label>
+                        </div>
+                        <div id="block_modify_cost">
+                            <span></span>
+                            <label>Prezzo Unitario:<input id="input_block_modify_cost" type="text"></label>
+                        </div>
+                    </form>
+                    <input id="input_block_modify" class="cursor" type="button" value="Modifica Prodotto">
+                    <input id="input_block_delete" class="cursor" type="button" value="Elimina Prodotto">
+                    <span class="error"></span>
+                </div>
+
+                <div id="modal_block_add" class="hidden">
+                    <h1 class="modal_title">Nuovo Prodotto</h1>
+                    <form id="form_add" method="post" action="/products/supplierAddProduct">
+                        <div id="block_add_name">
+                            <label>Nome del Prodotto:<input id="input_block_add_name" type="text"></label>
+                        </div>
+                        <div id="block_add_quantity">
+                            <label>Quantità:<input id="input_block_add_quantity" type="number"></label>
+                        </div>
+                        <div id="block_add_cost">
+                            <label>Prezzo Unitario:<input id="input_block_add_cost" type="text"></label>
+                        </div>
+                    </form>
+                    <input id="input_block_add" class="cursor" type="button" value="Nuovo Prodotto">
+                    <span class="error"></span>
+                </div>
+            </span>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div>
+            Seguici anche sui social !<br>
+            <em>Powered by<br>Prifti Tomas O46002191</em>
+        </div>
+    </footer>
+</body>
+
+</html>

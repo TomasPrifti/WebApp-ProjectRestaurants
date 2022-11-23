@@ -1,0 +1,374 @@
+header {
+    background-image: url(../images/restaurants/header.jpg);
+}
+
+#input_login, #input_register, #profile, #logout, #logout_for {
+    background-color: rgb(247, 191, 88);
+    border: 2px solid rgb(247, 191, 88);
+    border-radius: 10px;
+    font-size: 20px;
+    width: 35%;
+    z-index: 1;
+}
+
+#input_login:hover, #input_register:hover, #profile:hover, #logout:hover, #logout_for:hover {
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+/* Section */
+
+section {
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+#preferences {
+    flex-direction: column;
+    align-items: center;
+    border: 2px groove darkgrey;
+    width: 80%;
+    margin-bottom: 1%;
+    background-color: rgb(247, 191, 88);
+}
+
+#title_preferences {
+    font-size: calc(30px + 3vw);
+    margin: 10px;
+    text-decoration: underline;
+    text-align: center;
+    font-family: 'Arbutus', cursive;
+}
+
+#choices {
+    width: 90%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.choice {
+    width: 23%;
+    height: 250px;
+    margin: 0.5% 0.5%;
+    border: 2px groove darkgrey;
+    background-color: white;
+}
+
+.title_choice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+    border-bottom: 1px groove darkgrey;
+}
+
+.title_choice h1 {
+    margin: 0px;
+    width: 65%;
+    text-align: center;
+    font-size: calc(8px + 1vw);
+    font-family: 'Space Mono', monospace;
+    margin-left: 1%;
+}
+
+.title_choice img {
+    width: 23%;
+    background-color: white;
+    margin-right: 1%;
+    border: 2px solid white;
+}
+
+.title_choice img:hover {
+    cursor: pointer;
+    border-radius: 20px;
+    border-color: black;
+}
+
+.image_choice {
+    height: 70%;
+    width: 100%;
+}
+
+#title_blocks {
+    font-size: calc(30px + 3vw);
+    margin: 0px 3% 0px 3%;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Arbutus', cursive;
+}
+
+#input_block {
+    text-align: right;
+    width: 80%;
+    margin: 1% 0%;
+}
+
+#input_block span{
+    font-size: 20px;
+    color: black;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px groove darkgrey;
+    width: 80%;
+    margin: 0.5% 0%;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(247, 191, 88);
+    z-index: 1;
+}
+
+.name {
+    width: 82%;
+    height: 100%;
+    font-size: calc(20px + 1vw);
+    font-family: 'Cherry Swash', cursive;
+    margin: 0.5% 0% 0% 1%;
+}
+
+.info, .preference {
+    height: 100%;
+    border: 1px solid grey;
+}
+
+.info {
+    width: calc(65px + 3vw);
+}
+
+.preference {
+    width: calc(50px + 3vw);
+}
+
+.info:hover, .preference:hover {
+    cursor: pointer;
+    border-color: rgb(180, 20, 20);
+    border-top: 2.5px solid rgb(180, 20, 20);
+    border-bottom: 2.5px solid rgb(180, 20, 20);
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    border-top: 2px groove darkgrey;
+}
+
+.text, .content img {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(216, 164, 31, 0.3);
+}
+
+.text {
+    border-right: 2px groove darkgrey;
+}
+
+.text div {
+    margin: 2% 2%;
+    color: black;
+    font-family: 'Port Lligat Sans', sans-serif;
+    font-size: calc(13px + 1vw);
+    font-style: oblique;
+}
+
+#modal_block {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px groove darkgrey;
+    background-color: rgb(247, 191, 88);
+}
+
+#modal_title {
+    font-size: 40px;
+    font-family: 'Cherry Swash', cursive;
+}
+
+#form_login, #form_register, #form_profile {
+    margin: 0px;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form_profile {
+    align-items: center;
+}
+
+#form_profile label {
+    margin: 2% 0%;
+}
+
+#description_label_profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#profile_description {
+    max-width: 500px;
+    max-height: 100px;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    margin: 1% 0%;
+}
+
+#modal em {
+    font-size: 15px;
+}
+
+label {
+    font-size: 25px;
+}
+
+#modal_button_delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal_button, #delete_profile {
+    border-radius: 10px;
+    font-size: 25px;
+    margin: 3% 0%;
+}
+
+#delete_profile {
+    color: red;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons span, #modal_error {
+    margin: 2% 0%;
+    color:red;
+}
+
+#modal_button:hover, #delete_profile:hover {
+    cursor: pointer;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: red;
+}
+
+/* Media Query */
+
+@media (max-width: 850px) {
+    .choice {
+        width: 30%;
+    }
+    label {
+        font-size: 20px;
+    }
+    .error {
+        font-size: 15px;
+    }
+    #profile_description {
+        max-width: 400px;
+    }
+    #login {
+        width: 350px;
+        height: 200px;
+    }
+    #title_login {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    /* Header */
+    #login {
+        width: 250px;
+        height: 200px;
+    }
+    #title_login {
+        font-size: 20px;
+        width: 80%
+    }
+    #input_login, #input_register, #profile, #logout, #logout_for {
+        font-size: 13px;
+        width: 40%;
+    }
+    #login div span {
+        margin: 0% 3%;
+    }
+    label {
+        display: flex;
+    }
+    #profile_description {
+        max-width: 300px;
+    }
+    /* Section */
+    #title_preferences {
+        font-size: 45px;
+    }
+    #title_blocks {
+        margin-top: 2%;
+        font-size: 45px;
+    }
+    #input_block {
+        text-align: center;
+        margin: 2% 0%;
+    }
+    .name {
+        font-size: 25px;
+        margin: 3% 0% 0% 1%;
+    }
+    .content {
+        height: 180px;
+    }
+    .text div {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+    .choice {
+        width: 45%;
+    }
+    .title_choice h1 {
+        font-size: 15px;
+    }
+    #login {
+        width: 250px;
+        height: 150px;
+    }
+    #login div span {
+        font-size: 15px;
+    }
+    #input_login, #input_register, #profile, #logout, #logout_for {
+        font-size: 13px;
+    }
+}
